@@ -1,0 +1,9 @@
+#root {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-check {
+  margin-right: 10px;
+}

@@ -1,0 +1,57 @@
+import { o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, o11, o12 } from "../assets";
+export default [
+  { id: 0, alt: "Mak", filename: o1, category: 1, downloads: 35 },
+  { id: 1, alt: "Bukiet", filename: o2, category: 1, downloads: 43 },
+  {
+    id: 2,
+    alt: "Dalmatyńczyk",
+    filename: o3,
+    category: 2,
+    downloads: 2,
+  },
+  {
+    id: 3,
+    alt: "Świnka morska",
+    filename: o4,
+    category: 2,
+    downloads: 53,
+  },
+  {
+    id: 4,
+    alt: "Rotwailer",
+    filename: o5,
+    category: 2,
+    downloads: 43,
+  },
+  { id: 5, alt: "Audi", filename: o6, category: 3, downloads: 11 },
+  { id: 6, alt: "kotki", filename: o7, category: 2, downloads: 22 },
+  { id: 7, alt: "Róża", filename: o8, category: 1, downloads: 33 },
+  {
+    id: 8,
+    alt: "Świnka morska",
+    filename: o9,
+    category: 2,
+    downloads: 123,
+  },
+  {
+    id: 9,
+    alt: "Foksterier",
+    filename: o10,
+    category: 2,
+    downloads: 22,
+  },
+  {
+    id: 10,
+    alt: "Szczeniak",
+    filename: o11,
+    category: 2,
+    downloads: 12,
+  },
+  {
+    id: 11,
+    alt: "Garbus",
+    filename: o12,
+    category: 3,
+    downloads: 321,
+  },
+];

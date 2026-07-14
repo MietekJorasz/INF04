@@ -1,0 +1,42 @@
+export default [
+  {
+    id: 1,
+    tytul: "Deszcz",
+    plik: "deszcz.mp4",
+    polubienia: 5,
+    wyswietlenia: 10,
+    autor: "maciek544",
+  },
+  {
+    id: 2,
+    tytul: "Słoneczna plaża",
+    plik: "plaza.mp4",
+    polubienia: 3,
+    wyswietlenia: 6,
+    autor: "jacek55",
+  },
+  {
+    id: 3,
+    tytul: "Fale morza",
+    plik: "morze.mp4",
+    polubienia: 5,
+    wyswietlenia: 8,
+    autor: "_.joasia._",
+  },
+  {
+    id: 4,
+    tytul: "Samochód",
+    plik: "samochod.mp4",
+    polubienia: 20,
+    wyswietlenia: 45,
+    autor: "mareczek_51",
+  },
+  {
+    id: 5,
+    tytul: "Ptak i śnieg",
+    plik: "ptak.mp4",
+    polubienia: 8,
+    wyswietlenia: 24,
+    autor: "marysia_284",
+  },
+];
