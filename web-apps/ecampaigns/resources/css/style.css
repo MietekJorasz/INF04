@@ -1,0 +1,165 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #f8f9fa;
+}
+
+body {
+  zoom: 125%;
+}
+
+#btnScrollToTop {
+  color: white;
+  border-radius: 10000%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1050;
+  display: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  color: black;
+}
+
+#btnScrollToTop.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#btnScrollToTop:not(.show) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.customBg {
+  width: 100%;
+  padding: 50px 0;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.steps-section {
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 0 auto;
+}
+
+.step {
+  width: 300px;
+  border-radius: 20px;
+  padding: 30px;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.step h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.left {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right {
+  width: 35%;
+}
+.signup .container,
+.signin .container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  position: absolute !important;
+  top: 0px !important;
+  left: 3rem !important;
+  z-index: 100;
+}
+
+.user {
+}
+
+@media (max-width: 1450px) {
+  .steps-container {
+    gap: 20px !important;
+  }
+
+  .step {
+    width: 250px;
+  }
+  .customBg {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .steps-container {
+    gap: 20px !important;
+    flex-direction: column;
+  }
+
+  .step {
+    width: auto !important;
+  }
+
+  .customBg {
+    padding: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar .navbar-collapse {
+    position: static !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .right {
+    display: none;
+  }
+  .left {
+    width: 100% !important;
+  }
+  .logo {
+    left: calc(50% - 3rem) !important;
+  }
+}

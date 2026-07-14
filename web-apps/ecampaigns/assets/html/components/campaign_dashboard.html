@@ -1,0 +1,91 @@
+<div>
+  <form action="/{{target}}" method="post" id="campaign">
+    <input
+      type="hidden"
+      id="campaignId"
+      name="campaignId"
+      value="{{campaignId}}"
+    />
+
+    <input
+      type="hidden"
+      id="templateId"
+      name="templateId"
+      value="{{templateId}}"
+    />
+
+    <div class="mb-3">
+      <label for="campaignTitle" class="form-label">Tytuł kampanii</label>
+      <input
+        type="text"
+        class="form-control"
+        id="campaignTitle"
+        name="campaignTitle"
+        value="{{campaignTitle}}"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="campaignDescription" class="form-label">Opis kampanii</label>
+      <textarea
+        class="form-control"
+        name="campaignDescription"
+        id="campaignDescription"
+      >
+{{campaignDescription}}</textarea
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="emailTitle" class="form-label">Tytuł email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="emailTitle"
+        name="emailTitle"
+        value="{{emailTitle}}"
+      />
+    </div>
+
+    <div id="editorSection" class="row mt-4">
+      <div class="col-md-6 mb-3">
+        <label for="emailHtml" class="form-label">Kod HTML email</label>
+        <textarea
+          id="emailHtml"
+          name="emailHtml"
+          class="form-control"
+          placeholder="Wpisz HTML tutaj..."
+          style="height: 50vh; font-family: monospace; resize: vertical"
+        >
+{{emailHtml}}</textarea
+        >
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Podgląd</label>
+        <div
+          id="preview"
+          class="border p-2"
+          style="background-color: #fff; height: 50vh; overflow: auto"
+        ></div>
+      </div>
+    </div>
+
+    <button id="saveBtn" type="submit" class="btn btn-primary mt-3">
+      Zapisz szablon
+    </button>
+    <button id="sendBtn" type="button" class="btn btn-success mt-3">
+      Wyślij kampanię
+    </button>
+  </form>
+</div>
+
+<script defer>
+  const form = document.querySelector("#campaign");
+  const sendBtn = document.querySelector("#sendBtn");
+
+  sendBtn.addEventListener("click", () => {
+    form.action = "/sendCampaign";
+    form.submit();
+  });
+</script>

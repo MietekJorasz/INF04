@@ -1,0 +1,44 @@
+<div>
+  <form action="/uploadRecipents" method="post" enctype="multipart/form-data">
+    <label class="form-label">Pliki o rozszerzeniach .csv, .json</label>
+    <div class="input-group mb-3">
+      <input
+        type="file"
+        name="file"
+        accept=".csv, .json, text/csv, application/json"
+        class="form-control"
+        id="fileInput"
+      />
+      <label class="input-group-text" for="fileInput">Wyślij</label>
+    </div>
+
+    <!-- <div class="mb-3">
+      <label for="emailCol" class="form-label">Nazwa kolumny</label>
+      <input
+        type="text"
+        class="form-control"
+        id="emailCol"
+        name="emailCol"
+        value=""
+      />
+    </div> -->
+
+    <div id="editorSection" class="row mt-4">
+      <div class="mb-3">
+        <label for="file_preview" class="form-label">Podgląd pliku</label>
+        <textarea
+          readonly
+          id="file_preview"
+          name="file_preview"
+          class="form-control"
+          placeholder="Wpisz HTML tutaj..."
+          style="height: 50vh; font-family: monospace; resize: vertical"
+        >
+            {{file_preview}}
+        </textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Dodaj</button>
+  </form>
+</div>

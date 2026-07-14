@@ -1,0 +1,22 @@
+<h2 class="mb-4">Odbiorcy</h2>
+
+<form action="/recipentSearch" method="post">
+  <div class="input-group mb-3" style="width: 350px">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Szukaj"
+      name="search"
+      id="search"
+      aria-label="search"
+      aria-describedby="search"
+    />
+    <button class="btn btn-primary" type="submit" id="search">
+      <i class="bi bi-search"></i>
+    </button>
+  </div>
+</form>
+
+{{SEARCH}}
+
+<div class="campaigns">{{CONTENT}}</div>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strona główna | ecampaign</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <style>
+      .sidebar .nav-link {
+        color: #333 !important;
+        background-color: transparent;
+        border-radius: 15px;
+      }
+      .sidebar .nav-link:hover,
+      .sidebar .nav-link:focus {
+        color: #000 !important;
+        background-color: #e9ecef;
+      }
+      .sidebar .nav-link.active {
+        color: #000 !important;
+        background-color: #dee2e6;
+        font-weight: 500;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: system-ui, sans-serif;
+        background-color: #f8f9fa;
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 60px;
+        width: 100%;
+        z-index: 1030;
+        border-bottom: 1px solid #dee2e6;
+      }
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 240px;
+        background-color: #f8f9fa;
+        padding: 1rem;
+        overflow-y: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .sidebar .nav-link {
+        margin-bottom: 0.25rem;
+      }
+      main {
+        margin-top: 70px;
+        margin-left: 240px;
+        padding: 20px;
+      }
+      .campaigns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        border-radius: 15px;
+        transition: 100ms;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .box .details {
+        text-align: center;
+        padding: 15px 5px;
+        background-color: white;
+        width: 100%;
+        border-radius: 0 0 13px 13px;
+        color: black;
+      }
+      a {
+        text-decoration: none !important;
+      }
+      .box.add {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-size: 40px;
+      }
+      .box:hover {
+        transform: scale(1.05);
+      }
+      @media (max-width: 768px) {
+        .sidebar {
+          left: -240px;
+          transition: left 0.3s ease;
+        }
+        .sidebar.show {
+          left: 0;
+        }
+        .navbar {
+          left: 0;
+        }
+        main {
+          margin-left: 0;
+        }
+      }
+
+      /* Edytor z podglądem */
+      .editor-wrapper {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .editor-wrapper > div {
+        flex: 1;
+      }
+      #emailHtml {
+        width: 100%;
+        height: 50vh;
+        font-family: monospace;
+        resize: vertical;
+      }
+      #preview {
+        border: 1px solid #ddd;
+        padding: 10px;
+        background: #fff;
+        height: 50vh;
+        overflow: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    {{SIDEBAR}} {{NAVIGATION}}
+
+    <main>{{MAIN}}</main>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtn = document.querySelector("#toggleSidebar");
+        const sidebar = document.querySelector(".sidebar");
+
+        toggleBtn?.addEventListener("click", () => {
+          sidebar.classList.toggle("show");
+        });
+
+        const htmlTextarea = document.querySelector("#emailHtml");
+        const preview = document.querySelector("#preview");
+
+        htmlTextarea?.addEventListener("input", () => {
+          preview.innerHTML = htmlTextarea.value;
+        });
+
+        if (htmlTextarea && preview) {
+          preview.innerHTML = htmlTextarea.value;
+        }
+
+        document
+          .querySelector("#fileInput")
+          .addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+              document.querySelector("#file_preview").value = e.target.result;
+            };
+
+            reader.onerror = function () {
+              alert("Błąd podczas czytania pliku!");
+            };
+
+            reader.readAsText(file);
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strona główna | ecampaign</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <button type="button" class="bg-primary" id="btnScrollToTop">
+      <i class="bi bi-arrow-up-short fs-3"></i>
+    </button>
+    {{CONTENT}}
+    <div class="mt-5">
+      <figure class="text-center">
+        <blockquote class="blockquote">
+          <p>Twórz, edytuj i wysyłaj kampanie, które naprawdę działają.</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          ecampaigns —
+          <cite title="Source Title"
+            >Twoje centrum skutecznego e-mail marketingu</cite
+          >
+        </figcaption>
+        <a href="/signup"
+          ><button class="btn btn-primary btn-sm">Zarejestruj się</button></a
+        >
+      </figure>
+    </div>
+
+    <div class="px-5 mt-5">
+      <div class="bg-primary bg-gradient customBg">
+        <section class="steps-section">
+          <div class="steps-container">
+            <div class="step">
+              <div class="step-number"><i class="bi bi-plus-circle"></i></div>
+              <h3>Utwórz kampanię</h3>
+              <p>
+                Rozpocznij nową kampanię e-mail w kilku prostych krokach —
+                intuicyjnie i bez zbędnych formalności.
+              </p>
+            </div>
+            <div class="step">
+              <div class="step-number"><i class="bi bi-collection"></i></div>
+              <h3>Wybierz szablon</h3>
+              <p>
+                Skorzystaj z gotowych, profesjonalnych templatek lub stwórz
+                własny projekt dopasowany do Twojej marki.
+              </p>
+            </div>
+            <div class="step">
+              <div class="step-number"><i class="bi bi-send"></i></div>
+              <h3>Wyślij i analizuj wyniki</h3>
+              <p>
+                Wyślij kampanię do swoich odbiorców i śledź statystyki otwarć,
+                kliknięć oraz skuteczność działań.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    {{FOOTER}}
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script defer>
+      const btn = document.querySelector("#btnScrollToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          btn.classList.add("show");
+        } else {
+          btn.classList.remove("show");
+        }
+      });
+
+      btn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<nav
+  class="navbar sticky-top navbar-expand-lg navbar-light bg-light position-relative"
+  style="border-bottom: 1px solid #dee2e6"
+>
+  <a href="/" class="navbar-brand ms-5 mb-0 h1 text-decoration-none"
+    >ecampaigns</a
+  >
+
+  <div class="d-flex align-items-center ms-auto me-5">
+    <div class="d-none d-lg-flex gap-2 me-10">
+      <a href="/signin">
+        <button type="button" class="btn btn-sm">Zaloguj się</button>
+      </a>
+      <a href="/signup">
+        <button type="button" class="btn btn-primary btn-sm">
+          Zarejestruj się
+        </button>
+      </a>
+    </div>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+
+  <div
+    class="collapse navbar-collapse justify-content-center position-absolute top-50 start-50 translate-middle"
+    id="navbarSupportedContent"
+  >
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link {{ACTIVE1}}" href="/templates">Templatki</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ACTIVE2}}" href="/campaign">Kampanie</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ACTIVE3}}" href="/recipients">Odbiorcy</a>
+      </li>
+    </ul>
+
+    <div class="d-lg-none text-center mt-3">
+      <a href="/signin"
+        ><button class="btn btn-sm w-100 mb-2">Zaloguj się</button></a
+      >
+      <a href="/signup"
+        ><button class="btn btn-primary btn-sm w-100">
+          Zarejestruj się
+        </button></a
+      >
+    </div>
+  </div>
+</nav>

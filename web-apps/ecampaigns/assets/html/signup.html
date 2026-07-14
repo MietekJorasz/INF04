@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rejestracja | ecampaign</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      body {
+        background-color: #f6f7fb;
+        display: flex;
+      }
+    </style>
+  </head>
+  <body class="signup">
+    <div class="left">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light position-relative logo"
+      >
+        <a href="/" class="navbar-brand mb-0 h1 text-decoration-none">
+          ecampaigns
+        </a>
+      </nav>
+      <div class="container">
+        <form action="/signup" method="POST">
+          <div class="mb-3">
+            <label for="company_name" class="form-label">Nazwa firmy</label>
+            <input
+              type="text"
+              class="form-control"
+              id="company_name"
+              name="company_name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Adres e-mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+            />
+            <div class="text-danger" style="font-size: 12px">{{ERROR}}</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Hasło</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="subscription_plan" class="form-label"
+              >Plan abonamentowy</label
+            >
+            <select
+              class="form-select"
+              id="subscription_plan"
+              name="subscription_plan"
+            >
+              <option value="free">Free</option>
+              <option value="pro">Pro</option>
+              <option value="enterprise">Enterprise</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">
+            Utwórz konto
+          </button>
+        </form>
+
+        <div class="text-center mt-3">
+          Masz już konto?
+          <a href="/signin" class="text-decoration-none">Zaloguj się</a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-primary right"></div>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

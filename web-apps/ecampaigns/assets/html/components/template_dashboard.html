@@ -1,0 +1,42 @@
+<div>
+  <form>
+    <div class="mb-3">
+      <label for="emailTitle" class="form-label">Tytuł email</label>
+      <input
+        readonly
+        type="text"
+        class="form-control"
+        id="emailTitle"
+        name="emailTitle"
+        value="{{emailTitle}}"
+      />
+    </div>
+
+    <div id="editorSection" class="row mt-4">
+      <div class="col-md-6 mb-3">
+        <label for="emailHtml" class="form-label">Kod HTML email</label>
+        <textarea
+          readonly
+          id="emailHtml"
+          name="emailHtml"
+          class="form-control"
+          placeholder="Wpisz HTML tutaj..."
+          style="height: 50vh; font-family: monospace; resize: vertical"
+        >
+{{emailHtml}}</textarea
+        >
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Podgląd</label>
+        <div
+          id="preview"
+          class="border p-2"
+          style="background-color: #fff; height: 50vh; overflow: auto"
+        ></div>
+      </div>
+    </div>
+
+    <a href="/dashboardTemplates" class="btn btn-primary mt-3"> Wróć </a>
+  </form>
+</div>
