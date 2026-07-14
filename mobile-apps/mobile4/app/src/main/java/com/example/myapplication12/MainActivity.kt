@@ -1,0 +1,61 @@
+package com.example.myapplication12
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.SeekBar
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        val list = listOf("Dzień dobry", "Buenos dias", "Good morning")
+        var index = 0
+
+        var textSizeSeekBar = findViewById<SeekBar>(R.id.textSizeSeekBar)
+        var resultTextView = findViewById<TextView>(R.id.resultTextView)
+        var nextBtn = findViewById<Button>(R.id.nextButton)
+
+        textSizeSeekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(
+                seekBar: SeekBar?,
+                progress: Int,
+                fromUser: Boolean
+            ) {
+                resultTextView.textSize = progress.toFloat();
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+        } )
+
+        nextBtn.setOnClickListener {
+            index++
+
+            if (index == list.size)
+                index = 0
+
+            resultTextView.text = list[index]
+        }
+
+
+
+    }
+}
