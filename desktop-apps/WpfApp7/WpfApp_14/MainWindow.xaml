@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfApp_14.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_14"
+        mc:Ignorable="d"
+        Title="Moje dźwięki, Wykonał: 00000000000" Background="SeaGreen" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="previosBtn" Click="previosBtn_Click">
+                <Image Height="70" x:Name="previousImg"/>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="150" Height="150" x:Name="vinyl"/>
+                <StackPanel Margin="25 0 0 0">
+                    <TextBlock x:Name="artistName" Text="Lorem ipsum" Foreground="White" FontSize="50" />
+                    <TextBlock x:Name="albumName" Text="Lorem ipsum" FontSize="30" Foreground="White" FontStyle="Italic" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="#61D918" x:Name="songNum" FontSize="20" Text="00 utworów" Margin="0 0 25 0"/>
+                        <TextBlock Foreground="#61D918" x:Name="year" FontSize="20" Text="0000" />
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="0 25 0 0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Foreground="#61D918" x:Name="downloads" Text="000000000" Margin="0 0 25 0" FontSize="20" Height="25"/>
+                <Button Padding="5" Background="#61D918" x:Name="downloadBtn" Content="Pobierz" FontWeight="Bold" FontSize="20" Click="downloadBtn_Click"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="nextBtn" Click="nextBtn_Click">
+                <Image x:Name="nextImg" Height="70"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

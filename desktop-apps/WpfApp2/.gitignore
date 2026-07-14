@@ -1,0 +1,35 @@
+## Build outputs and binary folders
+[Db]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+x64/
+x86/
+
+## WPF UI and XAML compilation artifacts
+*.g.cs
+*.g.i.cs
+*.baml
+
+## IDE-specific files (VS Code and Visual Studio)
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vshost.exe*
+*.vshost.bi*
+
+## Logging and diagnostics
+*.log
+*.ilk
+*.meta
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+
+## Operating system artifacts
+.DS_Store
+Thumbs.db

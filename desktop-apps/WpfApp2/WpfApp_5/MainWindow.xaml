@@ -1,0 +1,84 @@
+﻿<Window x:Class="WpfApp_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_5"
+        mc:Ignorable="d"
+        Title="Nadaj Przesyłkę, Pesel: 00000000000" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="50 30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <StackPanel HorizontalAlignment="Stretch">
+
+                    <GroupBox Header="Rodzaj przesyłki"
+                              Width="200"
+                              HorizontalAlignment="Left" Height="129">
+
+                        <StackPanel>
+                            <RadioButton Name="postcard" Content="Pocztówka"
+                             GroupName="packageType"
+                             IsChecked="True"
+                             Margin="10"            
+                             />
+
+                            <RadioButton x:Name="list" Content="List"
+                                         GroupName="packageType"
+                                         Margin="10 0"/>
+
+                            <RadioButton x:Name="parcel" Content="Paczka"
+                                         GroupName="packageType"
+                                         Margin="10"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <Button x:Name="checkPriceBtn"
+                            Content="Sprawdź Cenę"
+                            Width="200"
+                            Height="30"
+                            Margin="0 10 0 0"
+                            HorizontalAlignment="Left" Click="checkPriceBtn_Click"/>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 10 0 0"
+                                HorizontalAlignment="Left">
+
+                        <Image
+                               x:Name="packageImg"/>
+
+                        <TextBlock x:Name="priceTxt"
+                                   Text="Cena 1,5 zł"
+                                   FontWeight="Bold"
+                                   FontSize="18"
+                                   VerticalAlignment="Top"
+                                   Margin="10"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1">
+                <GroupBox Header="Dane adresowe">
+                    <StackPanel Margin="20">
+                        <Label>Ulica z numerem</Label>
+                        <TextBox x:Name="streetNum"/>
+                        <Label>Kod pocztowy</Label>
+                        <TextBox x:Name="postNum"/>
+                        <Label>Miasto</Label>
+                        <TextBox x:Name="city"/>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Margin="50 30">
+            <Button x:Name="submitBtn" Content="Zatwierdź" Click="submitBtn_Click"/>
+        </Grid>
+    </Grid>
+</Window>
