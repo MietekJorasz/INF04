@@ -1,4 +1,4 @@
-# 📚 INF.04 – Application Development Projects
+# 📚 INF.04 – Exam Preparation Materials
 
 This repository contains projects, exercises, and exam preparation materials created while studying for the **INF.04 vocational qualification exam**. It showcases practical experience in developing console, desktop, mobile, and web applications using various technologies.
 
