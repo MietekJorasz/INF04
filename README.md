@@ -34,4 +34,7 @@ The purpose of this repository is to document my learning journey while preparin
 ## ⚠️ Disclaimer
 
 All materials in this repository are intended for educational purposes only. They represent my learning process and practical experience gained while preparing for the INF.04 vocational qualification exam.
+
+---
+
 ⭐ If you find this repository useful, consider giving it a star.
